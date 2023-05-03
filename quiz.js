@@ -152,44 +152,57 @@ const questions = [
 ];
 
 
-const welcome = document.getElementById("welcome");
+// DOM elements
 const quiz = document.getElementById("quiz");
-const results = document.getElementById("results");
-const resultStyle = document.getElementById("resultStyle");
-const startQuiz = document.getElementById("startQuiz");
-const viewDetails = document.getElementById("viewDetails");
+const questionText = document.getElementById("question-text");
+const optionContainer = document.getElementById("option-container");
+const submitButton = document.getElementById("submit");
+const result = document.getElementById("result");
+const viewDetails = document.getElementById("view-details");
+const resultScreen = document.getElementById("result-screen");
+const resultText = document.getElementById("result-text");
 
+// Quiz variables
 let currentQuestion = 0;
-let score = { Visual: 0, Auditory: 0, ReadWrite: 0, Kinaesthetic: 0 };
+const score = {
+    Visual: 0,
+    Auditory: 0,
+    ReadWrite: 0,
+    Kinaesthetic: 0
+};
 
-startQuiz.addEventListener("click", () => {
-    welcome.style.display = "none";
-    showQuestion();
-    quiz.style.display = "block";
+// Load the first question when the page is loaded
+window.addEventListener("DOMContentLoaded", () => {
+    loadQuestion(currentQuestion);
 });
 
-viewDetails.addEventListener("click", () => {
-    showDetailedResults();
-});
-
-function showQuestion() {
-    if (currentQuestion < questions.length) {
-        const question = questions[currentQuestion];
-        let questionHtml = `<h2>${question.question}</h2>`;
-        questionHtml += '<form class="quiz-question" onchange="submitAnswer(this)">';
-        question.options.forEach((option, index) => {
-            questionHtml += `<input type="radio" name="option" id="option${index}" value="${option}" />
-                             <label for="option${index}">${option}</label>`;
-        });
-        questionHtml += "</form>";
-        quiz.innerHTML = questionHtml;
-    } else {
-        quiz.style.display = "none";
-        showResults();
+// Load the given question
+function loadQuestion(questionIndex) {
+    questionText.innerText = questions[questionIndex].question;
+    optionContainer.innerHTML = "";
+    for (const [key, value] of Object.entries(questions[questionIndex].options)) {
+        optionContainer.innerHTML += `
+            <div class="option">
+                <input type="radio" name="option" id="${key}" value="${key}">
+                <label for="${key}">${value}</label>
+            </div>
+        `;
     }
 }
 
-function submitAnswer() {
+// Get the selected option
+function getSelectedOption() {
+    const options = document.getElementsByName("option");
+    for (const option of options) {
+        if (option.checked) {
+            return option.value;
+        }
+    }
+    return null;
+}
+
+// Submit the answer and move to the next question or show the result
+submitButton.addEventListener("click", () => {
     const answer = getSelectedOption();
     if (!answer) {
         alert("Please select an answer");
@@ -206,14 +219,12 @@ function submitAnswer() {
         quiz.style.display = "none";
         result.style.display = "flex";
     }
-}
+});
 
-function showResults() {
-    const maxScore = Math.max(...Object.values(score));
-    const userStyle = Object.keys(score).find((key) => score[key] === maxScore);
-    resultStyle.textContent = userStyle;
-    results.style.display = "block";
-}
+// Show detailed results on a new screen
+viewDetails.addEventListener("click", () => {
+    showDetailedResults();
+});
 
 function showDetailedResults() {
     const maxScore = Math.max(...Object.values(score));
@@ -225,12 +236,13 @@ function showDetailedResults() {
     const readWritePercentage = ((score.ReadWrite / totalQuestions) * 100).toFixed(2);
     const kinaestheticPercentage = ((score.Kinaesthetic / totalQuestions) * 100).toFixed(2);
 
-    let resultDetails = `You have a predominant ${userStyle} learning style.\n\n`;
-    resultDetails += `Visual: ${visualPercentage}%\n`;
-    resultDetails += `Auditory: ${auditoryPercentage}%\n`;
-    resultDetails += `Read/Write: ${readWritePercentage}%\n`;
-    resultDetails += `Kinaesthetic: ${kinaestheticPercentage}%\n`;
+    let resultDetails = `You have a predominant ${userStyle} learning style.<br><br>`;
+    resultDetails += `Visual: ${visualPercentage}%<br>`;
+    resultDetails += `Auditory: ${auditoryPercentage}%<br>`;
+    resultDetails += `Read/Write: ${readWritePercentage}%<br>`;
+    resultDetails += `Kinaesthetic: ${kinaestheticPercentage}%<br>`;
 
-    alert(resultDetails);
+    result.style.display = "none";
+    resultScreen.style.display = "flex";
+    resultText.innerHTML = resultDetails;
 }
-
