@@ -2,32 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Learning Style Quiz</title>
-    <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
     <div class="quiz-container">
         <div class="quiz-logo", align="center">
             <!-- Add your logo image link here -->
-            <img src="https://github.com/cobypress/cobypress/blob/main/assets/white%20with%20slogan,%20large.png?raw=true" alt="Black Cloud Solutions Logo", width="20%">
+            <img src="https://github.com/cobypress/cobypress/blob/main/assets/white%20with%20slogan,%20large.png?raw=true" alt="Black Cloud Solutions Logo", width="30%">
         </div>
-        <div id="welcome" class="quiz-window">
-            <h1>Discover Your Learning Style</h1>
+        <div id="welcome">
+            <h1>Welcome to the Learning Style Quiz</h1>
             <button id="start">Start Quiz</button>
         </div>
-        <div id="quiz" class="quiz-window" style="display:none;">
-            <!-- Questions will be added here via JavaScript -->
+        <div id="quiz" style="display: none;">
+            <h2 id="question-text"></h2>
+            <div id="option-container"></div>
+            <button id="submit">Next</button>
         </div>
-        <div id="results" class="quiz-window" style="display:none;">
-            <h2>Your Learning Style is:</h2>
-            <h1 id="resultStyle"></h1>
-            <button id="viewDetails">View Details</button>
+        <div id="result" style="display: none;">
+            <button id="view-details">View Results</button>
+        </div>
         <div id="result-screen" style="display: none;">
             <h2>Your Results</h2>
             <p id="result-text"></p>
-        </div>
-            
         </div>
     </div>
     <script src="quiz.js"></script>
