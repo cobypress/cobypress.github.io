@@ -189,11 +189,23 @@ function showQuestion() {
     }
 }
 
-function submitAnswer(form) {
-    const answer = form.elements["option"].value;
-    score[questions[currentQuestion].answer]++;
-    currentQuestion++;
-    showQuestion();
+function submitAnswer() {
+    const answer = getSelectedOption();
+    if (!answer) {
+        alert("Please select an answer");
+        return;
+    }
+
+    const selectedAnswer = questions[currentQuestion].answer[answer];
+    score[selectedAnswer]++;
+
+    if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        loadQuestion(currentQuestion);
+    } else {
+        quiz.style.display = "none";
+        result.style.display = "flex";
+    }
 }
 
 function showResults() {
