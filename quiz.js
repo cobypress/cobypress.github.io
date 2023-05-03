@@ -205,7 +205,7 @@ function showResults() {
 
 function showDetailedResults() {
     const maxScore = Math.max(...Object.values(score));
-    const userStyle = Object.keys(score).find((key) => score[key] === maxScore);
+    const userStyle = Object.entries(score).reduce((a, b) => (a[1] > b[1] ? a : b))[0];
     
     const totalQuestions = questions.length;
     const visualPercentage = ((score.Visual / totalQuestions) * 100).toFixed(2);
@@ -221,3 +221,4 @@ function showDetailedResults() {
 
     alert(resultDetails);
 }
+
