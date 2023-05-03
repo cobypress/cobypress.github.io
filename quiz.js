@@ -176,6 +176,15 @@ window.addEventListener("DOMContentLoaded", () => {
     loadQuestion(currentQuestion);
 });
 
+// Start Quiz button
+const startButton = document.getElementById("start");
+const welcome = document.getElementById("welcome");
+
+startButton.addEventListener("click", () => {
+    welcome.style.display = "none";
+    quiz.style.display = "block";
+});
+
 // Load the given question
 function loadQuestion(questionIndex) {
     questionText.innerText = questions[questionIndex].question;
