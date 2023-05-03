@@ -162,6 +162,15 @@ const viewDetails = document.getElementById("view-details");
 const resultScreen = document.getElementById("result-screen");
 const resultText = document.getElementById("result-text");
 
+// Start Quiz button
+const startButton = document.getElementById("start");
+const welcome = document.getElementById("welcome");
+
+startButton.addEventListener("click", () => {
+    welcome.style.display = "none";
+    quiz.style.display = "block";
+});
+
 // Quiz variables
 let currentQuestion = 0;
 const score = {
@@ -174,15 +183,6 @@ const score = {
 // Load the first question when the page is loaded
 window.addEventListener("DOMContentLoaded", () => {
     loadQuestion(currentQuestion);
-});
-
-// Start Quiz button
-const startButton = document.getElementById("start");
-const welcome = document.getElementById("welcome");
-
-startButton.addEventListener("click", () => {
-    welcome.style.display = "none";
-    quiz.style.display = "block";
 });
 
 // Load the given question
