@@ -169,7 +169,7 @@ startQuiz.addEventListener("click", () => {
 });
 
 viewDetails.addEventListener("click", () => {
-    alert('More details about each learning style will be provided here.');
+    showDetailedResults();
 });
 
 function showQuestion() {
@@ -201,4 +201,23 @@ function showResults() {
     const userStyle = Object.keys(score).find((key) => score[key] === maxScore);
     resultStyle.textContent = userStyle;
     results.style.display = "block";
+}
+
+function showDetailedResults() {
+    const maxScore = Math.max(...Object.values(score));
+    const userStyle = Object.keys(score).find((key) => score[key] === maxScore);
+    
+    const totalQuestions = questions.length;
+    const visualPercentage = ((score.Visual / totalQuestions) * 100).toFixed(2);
+    const auditoryPercentage = ((score.Auditory / totalQuestions) * 100).toFixed(2);
+    const readWritePercentage = ((score.ReadWrite / totalQuestions) * 100).toFixed(2);
+    const kinaestheticPercentage = ((score.Kinaesthetic / totalQuestions) * 100).toFixed(2);
+
+    let resultDetails = `You have a predominant ${userStyle} learning style.\n\n`;
+    resultDetails += `Visual: ${visualPercentage}%\n`;
+    resultDetails += `Auditory: ${auditoryPercentage}%\n`;
+    resultDetails += `Read/Write: ${readWritePercentage}%\n`;
+    resultDetails += `Kinaesthetic: ${kinaestheticPercentage}%\n`;
+
+    alert(resultDetails);
 }
