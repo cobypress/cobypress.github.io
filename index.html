@@ -4,28 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Learning Style Quiz</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="quiz-container">
-        <div id="welcome">
-            <h1>Welcome to the Learning Style Quiz</h1>
-            <button id="start">Start Quiz</button>
+        <h1>Discover your learning style</h1>
+        <button id="startBtn" onclick="startQuiz()">Start Now</button>
+        <div id="quiz" class="hide">
+            <!-- Quiz questions and answer choices will be inserted here -->
         </div>
-        <div id="quiz" style="display: none;">
-            <h2 id="question-text"></h2>
-            <div id="option-container"></div>
-            <button id="submit">Next</button>
-        </div>
-        <div id="result" style="display: none;">
-            <button id="view-details">View Results</button>
-        </div>
-        <div id="result-screen" style="display: none;">
-            <h2>Your Results</h2>
-            <p id="result-text"></p>
+        <button id="nextBtn" class="hide" onclick="nextQuestion()">Next</button>
+        <div id="results" class="hide">
+            <h2>Your learning style is...</h2>
+            <p id="resultText"></p>
+            <div id="stylePercentages"></div>
         </div>
     </div>
-    <script src="quiz.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
