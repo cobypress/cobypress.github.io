@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Style Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="quiz.js"></script>
+  <title>Learning Style Quiz</title>
 </head>
+
 <body>
-    <div class="quiz-container">
-        <h1>Discover your learning style</h1>
-        <button id="startBtn" onclick="startQuiz()">Start Now</button>
-        <div id="quiz" class="hide">
-            <!-- Quiz questions and answer choices will be inserted here -->
-        </div>
-        <button id="nextBtn" class="hide" onclick="nextQuestion()">Next</button>
-        <div id="results" class="hide">
-            <h2>Your learning style is...</h2>
-            <h3 id="resultText"></h3>
-            <div id="stylePercentages"></div>
-        </div>
+  <div class="quiz-container">
+    <!-- Add this new div inside the quiz-container div -->
+    <div class="start-screen">
+      <h1>Find Your Learning Style</h1>
+      <button class="start-quiz">Start Quiz</button>
     </div>
-    <script src="script.js"></script>
+
+    <div class="question-container">
+      <!-- Question template -->
+    </div>
+    <div class="navigation">
+      <button class="previous">Previous Question</button>
+    </div>
+  </div>
+  <div class="results-container">
+    <h2>Your learning style is:</h2>
+    <h1 class="results-container-text"></h1>
+    <div class="percentage-container">
+      <!-- Percentage results template -->
+    </div>
+    <div class="button-container">
+      <button class="restart-quiz">Restart Quiz</button>
+      <button class="share">Share Quiz</button>
+      <div class="copy-message hidden">Quiz URL copied to clipboard</div>
+    </div>
+
+  </div>
 </body>
 </html>

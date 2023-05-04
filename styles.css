@@ -1,51 +1,164 @@
+/* styles.css */
+
 body {
     background-color: #6A6E64;
+    font-family: Helvetica, Arial, sans-serif;
     color: white;
-    font-family: Arial, sans-serif;
-}
-
-.quiz-container {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-}
-
-.hide {
-    display: none;
-}
-
-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .question-container {
+    margin-bottom: 1rem;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
     background-color: #393D32;
-    border: none;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    margin: 10px;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.question {
-    font-size: 1.5em;
-    margin-bottom: 1em;
-}
-
-.answers {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
-}
-
-.answers button {
-    width: 100%;
-    height: 3em;
-    font-size: 1.2em;
-}
-
-.selected {
-    background-color: #007BFF;
-}
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2B2E23;
+    transform: scale(1.05);
+  }
+  
+  button.share {
+    display: none;
+    /* hide the share button by default */
+  }
+  
+  .copy-message {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  .start-screen {
+    text-align: center;
+  }
+  
+  .question-container,
+  .navigation {
+    display: none;
+  }
+  
+  .option {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .options-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .option {
+    flex: 1;
+    margin: 0 0.5rem;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .result-content {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .results-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    text-align: center;
+  
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  button.previous {
+    display: flex;
+  }
+  
+  .restart-quiz {
+    display: none;
+    /* hide the restart button by default */
+  }
+  
+  
+  /* show the share and restart buttons only on the results page */
+  
+  .results-container .share {
+    display: inline-block;
+  }
+  
+  .results-container .restart-quiz {
+    display: inline-block;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  button.restart-quiz,
+  button.share {
+    min-height: 40px; /* You can adjust the value according to your desired height */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2; /* Add this line */
+  }
+  
+  
+  /* Hide the share and restart buttons on the question pages */
+  
+  .navigation {
+    display: none;
+  }
+  
+  
+  /* Show the share and restart buttons on the results page */
+  
+  .results-container .share-container {
+    display: flex;
+  }
+  
+  .results-container button.restart-quiz,
+  .results-container button.share {
+    display: inline-block;
+  }
+  
+  button {
+    
+    font-size: 1rem; /* Adjust the font-size of all buttons */
+    padding: 0.5rem 1rem; /* Adjust the padding of all buttons */
+    
+  }
+  
+  button.restart-quiz,
+  button.share {
+    
+    font-size: 1rem; /* Adjust the font-size of restart and share buttons to match other buttons */
+    padding: 0.5rem 1rem; /* Adjust the padding of restart and share buttons to match other buttons */
+    
+  }
