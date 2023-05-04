@@ -10,11 +10,15 @@ body {
     height: 100vh;
     margin: 0;
   }
-  head {
-    align-items: center;
+
+  header {
+    width: 100%;
+    text-align: center;
   }
+
   .question-container {
     margin-bottom: 1rem;
+    text-align: center;
   }
   
   .navigation {
