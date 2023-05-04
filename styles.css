@@ -10,7 +10,9 @@ body {
     height: 100vh;
     margin: 0;
   }
-  
+  head {
+    align-items: center;
+  }
   .question-container {
     margin-bottom: 1rem;
   }

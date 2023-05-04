@@ -9,7 +9,7 @@ const questions = [{
       'Write things out on index cards and make models or diagrams',
       'Use movement (e.g., tap a pencil, walk around) or use real-life examples'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   },
   {
@@ -20,7 +20,7 @@ const questions = [{
       'Both equally',
       'Physical landmarks'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   },
   {
@@ -31,7 +31,7 @@ const questions = [{
       'Think about how you might use the word "cat" in a sentence',
       'Imagine petting a cat'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   },
   {
@@ -42,7 +42,7 @@ const questions = [{
       'Write down the problem and possible solutions',
       'Act out the problem or use props to visualize it'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   },
   {
@@ -53,7 +53,7 @@ const questions = [{
       'Read about it or follow written instructions',
       'Jump in and practice it'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   },
   {
@@ -64,7 +64,7 @@ const questions = [{
       'Writing it down or taking notes',
       'Applying it in a hands-on way'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   },
   {
@@ -75,7 +75,7 @@ const questions = [{
       'Write down the directions',
       'Walk or drive with them to the location'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   },
   {
@@ -86,7 +86,7 @@ const questions = [{
       'Write the numbers down',
       'Dial the numbers on a keypad'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   },
   {
@@ -97,7 +97,7 @@ const questions = [{
       'Prefer to read aloud or hear the words as you read silently',
       'Fidget, tap your foot, or move around while reading'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   },
   {
@@ -108,7 +108,7 @@ const questions = [{
       'You learn by reading and writing',
       'You learn by doing and experiencing'
     ],
-    learningStyles: ['Visual', 'Auditory', 'ReadWrite', 'Kinaesthetic'],
+    learningStyles: ['Visual', 'Auditory', 'Read/Write', 'Kinaesthetic'],
     weights: [1, 1, 1, 1]
   }
 ];
@@ -116,7 +116,7 @@ const questions = [{
 const learningStyleScores = {
   Visual: 0,
   Auditory: 0,
-  ReadWrite: 0,
+  "Read/Write": 0,
   Kinaesthetic: 0
 };
 
