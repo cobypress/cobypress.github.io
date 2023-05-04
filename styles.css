@@ -164,3 +164,8 @@ body {
     padding: 0.5rem 1rem; /* Adjust the padding of restart and share buttons to match other buttons */
     
   }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+  }
